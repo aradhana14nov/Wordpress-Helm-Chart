@@ -1,10 +1,10 @@
 <h1 align="center">WordPress Operator</h1>
 
-![Logo](_images/logo.PNG)
+![Logo](_images/logo.png)
 
 WordPress is one of the most versatile open source content management systems on the market. A publishing platform for building blogs and websites.
 
-Introduction
+# Introduction
 WordPress Bitnami Chart bootstraps a  deployment on a  cluster using the  package manager.
 It also packages MariaDB deployment for the database requirements of the WordPress application.
 
@@ -14,7 +14,7 @@ In addition to leveraging the intrinsic scalability and high availability aspect
 After completing the steps described in this tutorial, you will have a fully functional WordPress installation within a containerized cluster environment managed by Kubernetes.
 
 
-#Objective of tutorial
+# Objective of tutorial
 
 In this tutorial,we are going to cover following topics:
 

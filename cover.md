@@ -1,33 +1,29 @@
-<h1 align="center">MinIO Operator</h1>
+<h1 align="center">WordPress Operator</h1>
 
 ![Logo](_images/logo.PNG)
 
-MinIO is a high performance distributed object storage server, designed for large-scale private cloud infrastructure. MinIO is designed in a cloud-native manner to scale sustainably in multi-tenant environments. Orchestration platforms like Kubernetes provide perfect launchpad for MinIO to scale. MinIO is Open Source, Enterprise-Grade, Amazon S3 Compatible Object Storage. 
-MinIO-Operator brings native MinIO, MCS, and KES support to Kubernetes. 
+WordPress is one of the most versatile open source content management systems on the market. A publishing platform for building blogs and websites.
 
-### Key features :
+Introduction
+WordPress Bitnami Chart bootstraps a  deployment on a  cluster using the  package manager.
+It also packages MariaDB deployment for the database requirements of the WordPress application.
 
-SQL Select
-Encryption & WORM
-Multi-Site Federation
-Lambda Compute
-Integration with IAM Tools
-Erasure Code & Bitrot Protection
-About this Operator
+In this tutorial, we’ll use Helm for setting up WordPress on top of a Kubernetes cluster, in order to create a highly-available website.
+In addition to leveraging the intrinsic scalability and high availability aspects of Kubernetes, this setup will help keeping WordPress secure by providing simplified upgrade and rollback workflows via Helm.
+
+After completing the steps described in this tutorial, you will have a fully functional WordPress installation within a containerized cluster environment managed by Kubernetes.
 
 
+#Objective of tutorial
 
-### MinIO-Operator currently supports following features:
+In this tutorial,we are going to cover following topics:
 
-- Configure the fundamentals of MinIO like versions, persistence, erasure code configuration, and replicas.
-- Launch MinIO Clusters with specific affinity, toleration and other pre-defined settings
-- Create and delete highly available distributed MinIO clusters
-- Automatic TLS: Deploy TLS enabled MinIO clusters with builtin certificate signing requests.
-- Expand an existing MinIO cluster	
-- Use a custom template for hostname discovery	
-- Use PodSecurityPolicy for MinIO Pods	
-- Deploy MCS with MinIO cluster	
-- Deploy KES with MinIO cluster
+- How to Install WordPress Bitnami Helm Chart and verify its successful installation.
+- Verify status of pods and services. 
+- Configurable parameters of the WordPress Bitnami Helm Chart and their default values.
+-  How to access WordPress Console
+- Uninstall WordPress Helm Chart and release resources
+
 
 
 

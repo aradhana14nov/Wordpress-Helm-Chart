@@ -3,7 +3,7 @@ title: How to Uninstall WordPress chart
 description: This tutorial explains how to Uninstall WordPress helm chart
 ---
 
-### Uninstall WordPress Helm Chart
+### Uninstall WordPress Helm Chart and release the associated resources 
 
 To uninstall the wordpress helm chart, use the helm delete command:
 

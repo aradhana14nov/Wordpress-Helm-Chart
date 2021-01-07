@@ -74,7 +74,7 @@ helm upgrade wordpress -f wordpress-values.yaml bitnami/wordpress --namespace wo
  
 This command will produce output very similar to the output produced by helm install. It is important to provide the same configuration file we used when installing the WordPress chart for the first time, as it contains the custom database settings we defined for our setup.
 
-Step 5:Check updated information about your release using helm list command.
+Step 5: Check updated information about your release using helm list command.
 
 ```execute
 helm list

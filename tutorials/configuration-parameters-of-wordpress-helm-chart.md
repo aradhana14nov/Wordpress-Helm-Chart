@@ -4,19 +4,27 @@ The following table lists the configurable parameters of the WordPress chart and
 
 ### Global parameters
 
+```
+
 | Parameter                 | Description                                     | Default                                                 |
 |---------------------------|-------------------------------------------------|---------------------------------------------------------|
 | `global.imageRegistry`    | Global Docker image registry                    | `nil`                                                   |
 | `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]` (does not add image pull secrets to deployed pods) |
 | `global.storageClass`     | Global storage class for dynamic provisioning   | `nil`                                                   |
 
+```
+
 ### Common parameters
+
+```
 
 | Parameter                 | Description                                     | Default                                                 |
 |---------------------------|-------------------------------------------------|---------------------------------------------------------|
 | `nameOverride`            | String to partially override wordpress.fullname | `nil`                                                   |
 | `fullnameOverride`        | String to fully override wordpress.fullname     | `nil`                                                   |
 | `clusterDomain`           | Default Kubernetes cluster domain               | `cluster.local`                                         |
+
+```
 
 ### WordPress parameters
 

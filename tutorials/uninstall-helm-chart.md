@@ -28,3 +28,11 @@ Output:
 ```
 Error: release: not found
 ```
+
+- Delete the namespace :
+
+```execute
+kubectl delete ns wordpress
+```
+
+This will release all the resources associated with installed chart.

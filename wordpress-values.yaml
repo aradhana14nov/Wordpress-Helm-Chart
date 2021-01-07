@@ -1,5 +1,8 @@
 wordpressUsername: jhooq
 wordpressPassword: jhooq
+mariadb.rootUser.password: secretpassword,
+mariadb.db.password: dbpassword,
+allowEmptyPassword: false
 wordpressEmail: contact@jhooq.com
 wordpressFirstName: Sammy
 wordpressLastName: Rocks

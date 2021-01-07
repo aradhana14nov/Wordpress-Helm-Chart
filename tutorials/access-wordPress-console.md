@@ -17,10 +17,10 @@ To access your WordPress site from outside the cluster follow the steps below:
 
 
 ```execute
-    export NODE_PORT=$(kubectl get --namespace wordpress -o jsonpath="{.spec.ports[0].nodePort}" services wordpress)
-   export NODE_IP=$(kubectl get nodes --namespace wordpress -o jsonpath="{.items[0].status.addresses[0].address}")
-   echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
-   echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
+ export NODE_PORT=$(kubectl get --namespace wordpress -o jsonpath="{.spec.ports[0].nodePort}" services wordpress)
+ export NODE_IP=$(kubectl get nodes --namespace wordpress -o jsonpath="{.items[0].status.addresses[0].address}")
+ echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
+ echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 ```
 
 

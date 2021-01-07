@@ -24,7 +24,7 @@ you should see the following output:
 
 Step 2: Create a namespace : "wordpress". 
 
-```execute
+```
 kubectl create namespace wordpress
 ```
 

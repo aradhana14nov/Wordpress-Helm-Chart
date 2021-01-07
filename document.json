@@ -43,7 +43,7 @@
     {
       "description": "Changing User Ownership for /data",
       "exec": "chown -R 1001:1001 /data"
-    },
+    }
   ],
   "display": [
     {

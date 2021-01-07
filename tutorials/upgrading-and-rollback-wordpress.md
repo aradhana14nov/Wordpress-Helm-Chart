@@ -18,16 +18,19 @@ helm list -n wordpress
 ``` 
 You should get output similar to this:
 
-Output
-NAME        REVISION    UPDATED                     STATUS      CHART           APP VERSION NAMESPACE
-wordpress      1           Tue Jan 5 20:24:10 2021    DEPLOYED    wordpress-10.0.1   5.5.3     wordpress
-
-As you can see from the output, our current WordPress version is 5.5.3 (app version), while the chart version is 10.0.1. 
+Output:
+```
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS       CHART            APP VERSION
+wordpress       wordpress       1               2021-01-07 03:02:43.441726889 -0600 CST deployed     wordpress-10.3.1 5.6.0      
+```
+ 
+As you can see from the output, our current WordPress version is 5.6.0 (app version), while the chart version is 10.3.1 which is the latest one.
+But suppose our current helm chart version is 10.1.0 and app version is 5.6.0 and is not updated one and we need to upgrade it.
 
 Step 2: Update your Helm repositories with following command :
 
 ```execute
-helm repo update -n wordpress
+helm repo update 
 ```
  
 You can expect the following output:
@@ -42,36 +45,29 @@ Update Complete. ⎈ Happy Helming!⎈
 Step 3: Check if there’s a newer version of the WordPress chart available using following command:
 
 ```execute
-helm inspect chart bitnami/wordpress
+helm search repo wordpress --versions
 ``` 
 
 You should see output similar to this:
 
 ```
-apiVersion: v1
-appVersion: 5.5.3
-description: Web publishing platform for building blogs and websites.
-engine: gotpl
-home: http://www.wordpress.com/
-icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
-keywords:
-- wordpress
-- cms
-- blog
-- http
-- web
-- application
-- php
-maintainers:
-- email: containers@bitnami.com
-  name: Bitnami
-name: wordpress
-sources:
-- https://github.com/bitnami/bitnami-docker-wordpress
-version: 10.0.3
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+bitnami/wordpress       10.3.1          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.3.0          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.2.1          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.2.0          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.1.5          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.1.4          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.1.2          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.1.1          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.1.0          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.0.10         5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.0.9          5.6.0           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.0.8          5.5.3           Web publishing platform for building blogs and ...
+bitnami/wordpress       10.0.7          5.5.3           Web publishing platform for building blogs and ...
 ```
 
-As you can see from the output, there’s a new chart available (version 10.0.3) with WordPress 5.5.3 (app version). 
+As you can see from the output, there’s a new chart available (version 10.3.1) with WordPress 5.6.0 (app version). 
 
 Step 4: To upgrade your WordPress release to the latest WordPress chart, execute below command:
 
@@ -89,8 +85,8 @@ helm list -n wordpress
 
 Output
 ```
-NAME    REVISION    UPDATED                     STATUS      CHART           APP VERSION     NAMESPACE
-wordpress  2           Tue Jan 5  21:51:20 2021    DEPLOYED    wordpress-5.5.3   10.0.3         wordpress
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS       CHART            APP VERSION
+wordpress       wordpress       2               2021-01-07 04:02:43.441726889 -0600 CST deployed     wordpress-10.3.1 5.6.0    
 ```
 
 You have successfully upgraded your WordPress to the latest version of the WordPress chart.
@@ -117,7 +113,7 @@ Rollback was a success! Happy Helming!
  
 This would rollback the WordPress installation to its previous release. 
 
-Step 2: Check WordPress was downgraded back to 10.0.3, chart version 5.5.3:
+Step 2: Check WordPress was downgraded back to previous version:
 
 ```execute
 helm list -n wordpress
@@ -126,8 +122,8 @@ helm list -n wordpress
 Output:
 
 ```
-NAME        REVISION    UPDATED                     STATUS      CHART           APP VERSION NAMESPACE
-wordpress      3      Tue Jan 5 22:02:42 2021    DEPLOYED    wordpress-10.1.2   10.0.3         default  
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS       CHART            APP VERSION
+wordpress       wordpress       3               2021-01-07 04:02:43.441726889 -0600 CST deployed     wordpress-10.1.0 5.6.0    
 ```
 
 Notice that rolling back a release will actually create a new revision, based on the target revision of the roll-back. Our WordPress release named wordpress now is at revision number 3, which was based on revision number 1.

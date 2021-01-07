@@ -1,3 +1,10 @@
+---
+title: How to Upgrade and Rollback WordPress chart 
+description: This tutorial explains how to Upgrade and Rollback WordPress helm chart
+---
+
+
+
 ### Upgrading WordPress
 
 It is also important to keep WordPress helm chart updated. 

@@ -25,7 +25,7 @@ wordpress       wordpress       1               2021-01-07 03:02:43.441726889 -0
 ```
  
 As you can see from the output, our current WordPress version is 5.6.0 (app version), while the chart version is 10.3.1 which is the latest one.
-But suppose our current helm chart version is 10.1.0 and app version is 5.6.0 and is not updated one and we need to upgrade it.
+But suppose our current helm chart version is 10.1.0 and app version is 5.6.0 and is not updated one and we need to upgrade it.We need to follow below steps.
 
 Step 2: Update your Helm repositories with following command :
 

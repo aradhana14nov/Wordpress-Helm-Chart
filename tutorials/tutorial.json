@@ -16,6 +16,12 @@
          "tutorial_name":"verify-wordpress-chart-installation.md",
          "title":"Verify Chart Installation is successful"
       },
+      {
+         "description":"How to access WordPress Console",
+         "duration":"5 min",
+         "tutorial_name":"access-wordpress-console.md",
+         "title":"Access Wordpress Console"
+      },
 
       {
          "description":" Detail description of Configuration Parameters of WordPress Helm Chart",

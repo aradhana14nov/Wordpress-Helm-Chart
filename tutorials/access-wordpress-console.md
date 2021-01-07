@@ -1,4 +1,10 @@
-### WordPress Console
+---
+title: How to Access WordPress site and WordPress Admin Console
+description: This tutorial explains how to access WordPress site and WordPress Admin Console once chart installed successfully
+---
+
+
+***WordPress Console***
 
 
 To obtain the application URL, wait until the pods are running.

@@ -4,7 +4,7 @@ description: This tutorial explains how to access WordPress site and WordPress A
 ---
 
 
-## WordPress Console
+### Access WordPress Console
 
 
 To obtain the application URL, wait until the pods are running.

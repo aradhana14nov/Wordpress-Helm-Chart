@@ -38,7 +38,7 @@
     },
     {
       "description": "Install the chart",
-      "exec": "helm install wordpress bitnami/wordpress --set securityContext.runAsUser=0 --set securityContext.fsGroup=0 --values=wordpress-values.yaml --namespace wordpress"
+      "exec": "helm install wordpress bitnami/wordpress --values=wordpress-values.yaml --namespace wordpress"
     },
     {
       "description": "Changing User Ownership for /data",

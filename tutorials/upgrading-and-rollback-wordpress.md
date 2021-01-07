@@ -71,6 +71,35 @@ As you can see from the output, there’s a new chart available (version 10.3.1)
 
 Step 4: To upgrade your WordPress release to the latest WordPress chart, execute below command:
 
+please create a backup of your database before running any of below actions. 
+The steps below would be only valid if your application (e.g. any plugins or custom code) is compatible with MariaDB 10.5.
+
+Obtain the credentials and the name of the PVC used to hold the MariaDB data on your current release:
+
+
+```execute
+export WORDPRESS_PASSWORD=$(kubectl get secret --namespace default wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+export MARIADB_ROOT_PASSWORD=$(kubectl get secret --namespace default wordpress-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 --decode)
+export MARIADB_PASSWORD=$(kubectl get secret --namespace default wordpress-mariadb -o jsonpath="{.data.mariadb-password}" | base64 --decode)
+export MARIADB_PVC=$(kubectl get pvc -l app.kubernetes.io/instance=wordpress,app.kubernetes.io/name=mariadb,app.kubernetes.io/component=primary -o jsonpath="{.items[0].metadata.name}")
+```
+
+Upgrade your release (maintaining the version) disabling MariaDB and scaling WordPress replicas to 0:
+
+```execute
+helm upgrade wordpress bitnami/wordpress --set wordpressPassword=$WORDPRESS_PASSWORD --set replicaCount=0 --set mariadb.enabled=false --version 10.3.1
+```
+
+Finally, upgrade you release to 10.3.1 reusing the existing PVC, and enabling back MariaDB:
+
+```execute
+helm upgrade wordpress bitnami/wordpress --set mariadb.primary.persistence.existingClaim=$MARIADB_PVC --set mariadb.auth.rootPassword=$MARIADB_ROOT_PASSWORD --set mariadb.auth.password=$MARIADB_PASSWORD --set wordpressPassword=$WORDPRESS_PASSWORD
+```
+You should see the lines below in MariaDB container logs:
+```execute
+kubectl logs $(kubectl get pods -l app.kubernetes.io/instance=wordpress,app.kubernetes.io/name=mariadb,app.kubernetes.io/component=primary -o jsonpath="{.items[0].metadata.name}")
+```
+
 ```execute
 cd /home/student/projects/Wordpress-Helm-Chart/
 helm upgrade wordpress -f wordpress-values.yaml bitnami/wordpress --namespace wordpress

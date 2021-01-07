@@ -8,7 +8,7 @@ Once the helm chart installation done we need to verify all the pods and service
 
 Execute below command to check status of pods and services: 
 
-### Check the pod status:
+### Check the pod status
 
 
 ```execute

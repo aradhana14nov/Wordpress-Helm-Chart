@@ -26,8 +26,8 @@ To access your WordPress site from outside the cluster follow the steps below:
 
 2. Open a browser and access WordPress Site using the obtained URL.
 
-```
-http://$NODE_IP:$NODE_PORT/
+```execute
+echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
 ```
 You should see your WordPress site with the custom theme that you have included in your image already activated. 
 

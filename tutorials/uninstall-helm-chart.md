@@ -11,6 +11,12 @@ To uninstall the wordpress helm chart, use the helm delete command:
 helm delete wordpress -n wordpress
 ```
 
+Output:
+
+```
+release "wordpress" uninstalled
+```
+
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
 ```execute
@@ -20,5 +26,5 @@ helm status wordpress -n wordpress
 Output:
 
 ```
-Status: UNINSTALLED
+Error: release: not found
 ```

@@ -1,0 +1,8 @@
+wordpressUsername: jhooq
+wordpressPassword: jhooq
+wordpressEmail: contact@jhooq.com
+wordpressFirstName: Sammy
+wordpressLastName: Rocks
+wordpressBlogName: Jhooq.com
+service: 
+  type: NodePort

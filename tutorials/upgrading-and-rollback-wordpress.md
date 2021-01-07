@@ -69,7 +69,7 @@ As you can see from the output, there’s a new chart available (version 10.0.3)
 Step 4: To upgrade your WordPress release to the latest WordPress chart, execute below command:
 
 ```execute
-helm upgrade wordpress -f wordpress-values.yaml bitnami/wordpress  --namespace wordpress
+helm upgrade wordpress -f wordpress-values.yaml bitnami/wordpress --namespace wordpress
 ```
  
 This command will produce output very similar to the output produced by helm install. It is important to provide the same configuration file we used when installing the WordPress chart for the first time, as it contains the custom database settings we defined for our setup.

@@ -1,3 +1,9 @@
+---
+title: Verify WordPress Chart Installation
+description: This tutorial explains how to verify that WordPress chart installed successfully
+---
+
+
 Once the helm chart installation done we need to verify all the pods and services are up and running.
 
 Execute below command to check status of pods and services: 

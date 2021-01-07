@@ -11,10 +11,10 @@ It is also important to keep WordPress helm chart updated.
 
 To Upgrade wordpress helm chart,Please execute following steps:
 
-Step 1: To list all of your current releases, run the following command :
+Step 1: To list all of your current releases in namespace "wordpress", run the following command :
 
 ```execute
-helm list
+helm list -n wordpress
 ``` 
 You should get output similar to this:
 
@@ -27,7 +27,7 @@ As you can see from the output, our current WordPress version is 5.5.3 (app vers
 Step 2: Update your Helm repositories with following command :
 
 ```execute
-helm repo update
+helm repo update -n wordpress
 ```
  
 You can expect the following output:
@@ -84,7 +84,7 @@ This command will produce output very similar to the output produced by helm ins
 Step 5: Check updated information about your release using helm list command.
 
 ```execute
-helm list
+helm list -n wordpress
 ``` 
 
 Output
@@ -107,7 +107,7 @@ If we want to undo the upgrade and rollback our WordPress release to its previou
 Step 1: execute rollback command :
 
 ```execute
-helm rollback wordpress 1
+helm rollback wordpress 1 -n wordpress
 ```
 
 Output:
@@ -120,7 +120,7 @@ This would rollback the WordPress installation to its previous release.
 Step 2: Check WordPress was downgraded back to 10.0.3, chart version 5.5.3:
 
 ```execute
-helm list
+helm list -n wordpress
 ``` 
 
 Output:

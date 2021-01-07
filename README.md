@@ -1,1 +1,1 @@
-# WordPress Helm-Operator
+# WordPress Helm Chart

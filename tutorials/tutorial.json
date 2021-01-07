@@ -45,9 +45,9 @@
    ],
    "usefulLinks":[
       {
-         "title":"MinIO Operator",
-         "description":"MinIO Operator ",
-         "url":"https://operatorhub.io/operator/minio-operator"
+         "title":"WordPress Helm Chart",
+         "description":"WordPress Bitnami Helm Chart",
+         "url":"https://bitnami.com/stack/wordpress/helm"
       }
    ]
 }

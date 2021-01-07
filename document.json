@@ -1,6 +1,6 @@
 {
   "name": "WordPress Helm Chart",
-  "description": WordPress Bitnami Helm Chart",
+  "description": "WordPress Bitnami Helm Chart",
   "logo": "_images/SalesStack.png",
   "has_supporting_content": true,
   "stack_id": "wordpress",

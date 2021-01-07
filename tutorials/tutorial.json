@@ -1,20 +1,39 @@
 {
-   "name":"MinIO Operator Tutorial",
+   "name":"WordPress Helm Chart Tutorial",
    "appLayout":"accordion",
    "appTheme":"g90",
    "footer":"footer.md",
    "tutorials":[
       {
-         "description":" A User Guide for verification of MinIO Operator Installation",
-         "duration":"5 min",
-         "tutorial_name":"operator-installation-verification-tutorial.md",
-         "title":"MinIO Operator Installation Verification Tutorial"
+         "description":" A User Guide for WordPress Bitnami Helm Chart Installation",
+         "duration":"15 min",
+         "tutorial_name":"bitnami-helm-chart-installation.md",
+         "title":"How to Install WordPress Bitnami Helm Chart Tutorial"
       },
       {
-         "description":" MinIO Instance Creation tutorial",
+         "description":" How to verify chart is installed successfully.",
+         "duration":"5 min",
+         "tutorial_name":"verify-wordpress-chart-installation.md",
+         "title":"Verify Chart Installation is successful"
+      },
+
+      {
+         "description":" Detail description of Configuration Parameters of WordPress Helm Chart",
+         "duration":"30 min",
+         "tutorial_name":"configuration-parameters-of-wordpress-helm-chart.md",
+         "title":"Configuration Parameters of WordPress Helm Chart Tutorial"
+      },
+      {
+         "description":" How to Upgrade and Rollback wordpress helm chart tutorial",
          "duration":"15 min",
-         "tutorial_name":"minio-instance-creation-tutorial.md",
-         "title":"MinIO Instance Creation tutorial"
+         "tutorial_name":"upgrading-and-rollback-wordpress.md",
+         "title":"Upgrade and Rollback WordPress Helm Chart tutorial"
+      },
+      {
+         "description":" How to uninstall Helm Chart",
+         "duration":"5 min",
+         "tutorial_name":"uninstall-helm-chart.md",
+         "title":"Uninstall WordPress Helm Chart"
       }
       
    ],

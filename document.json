@@ -1,28 +1,44 @@
 {
-  "name": "MinIO Operator",
-  "description": MinIO Operator",
+  "name": "WordPress Helm Chart",
+  "description": WordPress Bitnami Helm Chart",
   "logo": "_images/SalesStack.png",
   "has_supporting_content": true,
-  "stack_id": "minio-operator",
+  "stack_id": "wordpress",
   "type": "stack",
-  "categories": ["Storage"],
+  "categories": ["CMS"],
   "platform": "Kubernetes",
   "cover": "cover.md",
   "meta": {
-    "Monitoring": ["MinIo"],
+    "Monitoring": ["WordPress"],
     "Type":[
-         "Operators"
+         "Chart"
       ],
     "Install time": ["5 minutes"]
   },
 "deployment_information": {
   "Operator Project": "N/A",
-  "Deployment Namespace": "my-minio-operator"
+  "Deployment Namespace": "wordpress"
 },
-  "commands": [
+ "commands": [
     {
-      "description": "Install Operator",
-      "exec": "kubectl create -f https://operatorhub.io/install/minio-operator.yaml"
+      "description": "Create Namespace",
+      "exec": "kubectl create namespace wordpress"
+    },
+   {
+      "description": "Create hostpath for WordPress and MariaDB PVs",
+      "exec": "sudo mkdir -p /bitnami/mariadb/data && sudo chown -R 1001:1001 /bitnami/mariadb/data && sudo mkdir -p /bitnami/wordpress/wp-content && sudo chown -R 1001:1001 /bitnami/wordpress/wp-content && sudo mkdir /data && sudo chown -R 1001:1001 /data" 
+    },
+    {
+      "description": "Clone and Prepare ",
+      "exec": "cd /home/student/projects && git clone https://github.com/aradhana14nov/Wordpress-Helm-Chart && cd Wordpress-Helm-Chart && kubectl create -f mariadbpv.yaml && kubectl create -f wordpresspv.yaml"
+    },
+    {
+      "description": "Add Bitnami Repo",
+      "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+    },
+    {
+      "description": "Install the chart",
+      "exec": "helm install wordpress bitnami/wordpress --set securityContext.runAsUser=0 --set securityContext.fsGroup=0 --values=wordpress-values.yaml --namespace wordpress"
     }
   ],
   "display": [

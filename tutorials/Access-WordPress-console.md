@@ -1,47 +1,66 @@
 ### WordPress Console
 
 
-### Access application URL for WordPress
+To obtain the application URL, wait until the pods are running.
 
 
 Your WordPress site can be accessed through the following DNS name from within your cluster:
 
 ```
- wordpress.nswordpress.svc.cluster.local (port 80)
+ wordpress.wordpress.svc.cluster.local (port 80)
 ```
 
 To access your WordPress site from outside the cluster follow the steps below:
 
 
-1. Get the WordPress URL by running these commands:
+1. Get the WordPress URL by running below commands:
 
 
 ```execute
-   export NODE_PORT=$(kubectl get --namespace nswordpress -o jsonpath="{.spec.ports[0].nodePort}" services wordpress)
-   export NODE_IP=$(kubectl get nodes --namespace nswordpress -o jsonpath="{.items[0].status.addresses[0].address}")
+    export NODE_PORT=$(kubectl get --namespace wordpress -o jsonpath="{.spec.ports[0].nodePort}" services wordpress)
+   export NODE_IP=$(kubectl get nodes --namespace wordpress -o jsonpath="{.items[0].status.addresses[0].address}")
    echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
    echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 ```
 
 
-2. Open a browser and access WordPress using the obtained URL.
+2. Open a browser and access WordPress Site using the obtained URL.
+
 ```
 http://$NODE_IP:$NODE_PORT/
 ```
-3. Login with the following credentials below to see your blog:
+You should see your WordPress site with the custom theme that you have included in your image already activated. 
 
-To get your wordpress admin password run
+Please see the below snapshot how it looks like :
 
-root@kube-master:# kubectl get secret --namespace default wordpress-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode
+![](_images/wordpress-site.PNG)
+
+3. Access WordPress Admin Console:
+
+```execute
+echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
+```
+
+Open WordPress Admin Url in browser. You will see following login page :
+
+![](_images/login-console-final.png)
+
+- Log in to WordPress admin login console with the credentials obtained from running below commands:
+
+```execute
+echo Username: admin
+echo Password: $(kubectl get secret --namespace wordpress wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+```
+
+![](_images/console-admin-final.PNG)
+
+On successful login you will be see the following dashbaord page:
+
+![](_images/dashboard-wordpress.PNG)
+
+Navigate to the "Plugins" section and you can check what all plugin installed and activated as below snapshot:
+
+![](_images/plugins.PNG)
 
 
-echo Username: jhooq
-  echo Password: $(kubectl get secret --namespace nswordpress wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
 
-
-And you can use the username and password for accessing the WordPress.
-Navigate to the "Plugins" section and check that the plugin is also installed and activated.
-
-
-
-## On successful login you will be seeing the dashbaord page.

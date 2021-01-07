@@ -35,4 +35,26 @@ Error: release: not found
 kubectl delete ns wordpress
 ```
 
+- Delete the PersistentVolumes: 
+```execute
+kubectl delete -f mariadbpv.yaml
+```
+
+Output:
+
+```
+persistentvolume "mariadbpv" deleted
+```
+
+```execute
+kubectl delete -f wordpresspv.yaml
+```
+
+Output:
+
+```
+persistentvolume "wordpresspv" deleted
+```
+
+
 This will release all the resources associated with installed chart.

@@ -43,12 +43,12 @@ echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 
 Open WordPress Admin Url in browser. You will see following login page :
 
-![](_images/login-console-final.png)
+![](_images/login-console-final.PNG)
 
 - Log in to WordPress admin login console with the credentials obtained from running below commands:
 
 ```execute
-echo Username: admin
+echo Username: jhooq
 echo Password: $(kubectl get secret --namespace wordpress wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
 ```
 

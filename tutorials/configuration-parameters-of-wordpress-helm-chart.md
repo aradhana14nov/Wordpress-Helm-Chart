@@ -28,6 +28,9 @@ The following table lists the configurable parameters of the WordPress chart and
 
 ### WordPress parameters
 
+
+```
+
 | Parameter                            | Description                                                                   | Default                                                 |
 |--------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------|
 | `image.registry`                     | WordPress image registry                                                      | `docker.io`                                             |
@@ -102,8 +105,11 @@ The following table lists the configurable parameters of the WordPress chart and
 | `persistence.storageClass`           | PVC Storage Class                                                             | `nil` (uses alpha storage class annotation)             |
 | `persistence.accessMode`             | PVC Access Mode                                                               | `ReadWriteOnce`                                         |
 | `persistence.size`                   | PVC Storage Request                                                           | `10Gi`                                                  |
+```
 
 ### Ingress parameters
+
+```
 
 | Parameter                         | Description                                              | Default                        |
 |-----------------------------------|----------------------------------------------------------|--------------------------------|
@@ -119,7 +125,11 @@ The following table lists the configurable parameters of the WordPress chart and
 | `ingress.secrets[0].certificate`  | TLS Secret Certificate                                   | `nil`                          |
 | `ingress.secrets[0].key`          | TLS Secret Key                                           | `nil`                          |
 
+```
+
 ### Database parameters
+
+```
 
 | Parameter                                | Description                             | Default                                        |
 |------------------------------------------|-----------------------------------------|------------------------------------------------|
@@ -138,7 +148,12 @@ The following table lists the configurable parameters of the WordPress chart and
 | `externalDatabase.database`              | Name of the existing database           | `bitnami_wordpress`                            |
 | `externalDatabase.port`                  | Database port number                    | `3306`                                         |
 
+```
+
 ### Metrics parameters
+
+
+```
 
 | Parameter                                 | Description                                                                  | Default                                                      |
 |-------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -159,7 +174,7 @@ The following table lists the configurable parameters of the WordPress chart and
 | `metrics.serviceMonitor.honorLabels`      | honorLabels chooses the metric's labels on collisions with target labels.    | `false`                                                      |
 | `metrics.serviceMonitor.additionalLabels` | Used to pass Labels that are required by the Installed Prometheus Operator   | `{}`                                                         |
 
-
+```
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -183,7 +198,7 @@ helm install my-release -f values.yaml stable/wordpress
 
 ## Configuration and installation details
 
-### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+## [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 

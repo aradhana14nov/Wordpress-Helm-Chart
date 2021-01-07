@@ -11,6 +11,13 @@ It also packages MariaDB deployment for the database requirements of the WordPre
 In this tutorial, we’ll use Helm for setting up WordPress on top of a Kubernetes cluster, in order to create a highly-available website.
 In addition to leveraging the intrinsic scalability and high availability aspects of Kubernetes, this setup will help keeping WordPress secure by providing simplified upgrade and rollback workflows via Helm.
 
+# WordPress Architecture
+First let’s take a closer look at how a single node installation of WordPress without Kubernetes or Portworx would run:
+
+As you can see the PHP application will serve incoming HTTP requests, reads/writes are made to the file upload directory and queries are made against the backend MySQL database.
+A high level WordPress Architectural flow is shown below :
+
+![](_images/wordpress-architecture.png)
 
 # Objective of tutorial
 

@@ -19,8 +19,8 @@ You will see similar to this output:
 
 ```
 NAME                         READY   STATUS    RESTARTS   AGE
-wordpress-78d64d86d6-8pljh   1/1     Running   9          35m
-wordpress-mariadb-0          1/1     Running   0          35m
+wordpress-56cb97d698-pvvm6   1/1     Running   0          100s
+wordpress-mariadb-0          1/1     Running   0          100s
 ```
 
 Once the wordpress POD is up and running , your wordpress is ready to use
@@ -40,19 +40,19 @@ All the deployment and service status should be Running.
 
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
-pod/wordpress-78d64d86d6-8pljh   1/1     Running   9          37m
-pod/wordpress-mariadb-0          1/1     Running   0          37m
+pod/wordpress-56cb97d698-pvvm6   1/1     Running   0          2m16s
+pod/wordpress-mariadb-0          1/1     Running   0          2m16s
 
-NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
-service/wordpress           NodePort    10.98.117.238   <none>        80:30414/TCP,443:30121/TCP   37m
-service/wordpress-mariadb   ClusterIP   10.100.10.45    <none>        3306/TCP                     37m
+NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+service/wordpress           NodePort    10.99.150.199    <none>        80:31450/TCP,443:31851/TCP   2m16s
+service/wordpress-mariadb   ClusterIP   10.105.148.213   <none>        3306/TCP                     2m16s
 
 NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/wordpress   1/1     1            1           37m
+deployment.apps/wordpress   1/1     1            1           2m16s
 
 NAME                                   DESIRED   CURRENT   READY   AGE
-replicaset.apps/wordpress-78d64d86d6   1         1         1       37m
+replicaset.apps/wordpress-56cb97d698   1         1         1       2m16s
 
 NAME                                 READY   AGE
-statefulset.apps/wordpress-mariadb   1/1     37m
+statefulset.apps/wordpress-mariadb   1/1     2m16s
 ```

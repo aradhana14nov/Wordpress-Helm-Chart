@@ -79,7 +79,7 @@ spec:
      namespace: wordpress
      name: wordpress
   hostPath:
-    path: "/data"
+    path: "/bitnami/wordpress"
 EOF
 ```
 
@@ -92,7 +92,7 @@ kubectl create -f  wordpresspv.yaml
 
 
 
-Step 5: Add ‘bitnami/wordpress’ to your repo list:
+Step 5: Add ‘bitnami' to your repo list:
 
 Command:
 

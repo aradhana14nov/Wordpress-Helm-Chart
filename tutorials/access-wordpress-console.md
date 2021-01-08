@@ -16,7 +16,7 @@ Your WordPress site can be accessed through the following DNS name from within y
  wordpress.wordpress.svc.cluster.local (port 80)
 ```
 
-To access your WordPress site from outside the cluster follow the steps below:
+To access your WordPress site and Dashboard from outside the cluster follow the steps below:
 
 
 1. Get the WordPress URL by running below commands:
@@ -35,6 +35,13 @@ To access your WordPress site from outside the cluster follow the steps below:
 ```execute
 echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
 ```
+
+WordPress Site URL:
+
+```
+WordPress URL: http://$NODE_IP:$NODE_PORT/
+```
+
 You should see your WordPress site with the custom theme that you have included in your image already activated. 
 
 Please see the below snapshot how it looks like :
@@ -44,6 +51,12 @@ Please see the below snapshot how it looks like :
 3. Access WordPress Admin Console:
 
 ```execute
+echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
+```
+
+Dashboard Console:
+
+```
 echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 ```
 

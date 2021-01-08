@@ -37,7 +37,7 @@ kubectl delete ns wordpress
 
 - Delete the PersistentVolumes: 
 ```execute
-kubectl delete -f mariadbpv.yaml
+kubectl delete -f /home/student/projects/Wordpress-Helm-Chart/mariadbpv.yaml
 ```
 
 Output:
@@ -47,7 +47,7 @@ persistentvolume "mariadbpv" deleted
 ```
 
 ```execute
-kubectl delete -f wordpresspv.yaml
+kubectl delete -f /home/student/projects/Wordpress-Helm-Chart/wordpresspv.yaml
 ```
 
 Output:

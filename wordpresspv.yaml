@@ -14,4 +14,4 @@ spec:
      namespace: wordpress
      name: wordpress
   hostPath:
-    path: "/home/student/bitnami/wordpress"
+    path: "/bitnami/wordpress"

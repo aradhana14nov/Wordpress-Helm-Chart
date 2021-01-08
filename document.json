@@ -26,7 +26,7 @@
     },
    {
       "description": "Create hostpath for WordPress and MariaDB PVs",
-      "exec": "mkdir -p /home/student/bitnami/mariadb/data && chown -R 1001:1001 /home/student/bitnami/mariadb/data && mkdir -p /home/student/bitnami/wordpress/wp-content && chown -R 1001:1001 /home/student/bitnami/wordpress/" 
+      "exec": "mkdir -p /bitnami/mariadb/data && chown -R 1001:1001 /bitnami/mariadb/data && mkdir -p /bitnami/wordpress/wp-content && chown -R 1001:1001 /bitnami/wordpress/" 
     },
     {
       "description": "Clone and Prepare ",

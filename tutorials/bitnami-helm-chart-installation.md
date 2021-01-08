@@ -5,6 +5,9 @@ description: This tutorial explains how we Installed WordPress Bitnami Helm Char
 
 ### Install WordPress Bitnami Helm Chart
 
+This tutorial is made just to describe what all steps are actually being performed behind the WordPress Chart "Install" button and is just for knowledge perspective.
+Please do not execute these manually if you already installed the WordPress Helm Chart using "Install" button. 
+
 We have followed following steps to install WordPress Bitnami Helm Chart :
 
 

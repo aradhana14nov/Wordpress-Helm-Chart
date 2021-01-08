@@ -29,12 +29,7 @@
          "tutorial_name":"configuration-parameters-of-wordpress-helm-chart.md",
          "title":"Configuration Parameters of WordPress Helm Chart Tutorial"
       },
-      {
-         "description":" How to Upgrade and Rollback wordpress helm chart tutorial",
-         "duration":"15 min",
-         "tutorial_name":"upgrading-and-rollback-wordpress.md",
-         "title":"Upgrade and Rollback WordPress Helm Chart tutorial"
-      },
+      
       {
          "description":" How to uninstall Helm Chart",
          "duration":"5 min",

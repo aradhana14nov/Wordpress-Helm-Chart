@@ -66,4 +66,26 @@ Navigate to the "Plugins" section and you can check what all plugin installed an
 ![](_images/plugins.PNG)
 
 
+### Create Your First Post
+
+You can now add a new post using the following steps:
+
+1. Select the “Posts -> Add New” menu option to create a new post.
+
+  ![](_images/posts.png)
+
+2. Add new WordPress post
+
+3. Enter a title and content for the post. You can use the formatting tools at the top of the content area to format your post and add hyperlinks or images.
+
+4. Optionally, choose the format and category for your post.
+
+5. Publish it immediately using the “Publish” button.
+   
+   ![](_images/publish.png)
+
+
+And now, when you visit your blog’s front page, you should see your new post.
+
+
 

@@ -10,25 +10,18 @@ Please do not execute these manually if you already installed the WordPress Helm
 
 We have followed following steps to install WordPress Bitnami Helm Chart :
 
-
-Step 1: Add ‘bitnami/wordpress’ to your repo list using below command :
-
-
-```
-helm repo add bitnami https://charts.bitnami.com/bitnami
-```
-
-you should see the following output:
-
-```
-"bitnami" has been added to your repositories
-```
-
-
-Step 2: Create a namespace : "wordpress". 
+Step 1: Create a namespace : "wordpress". 
 
 ```
 kubectl create namespace wordpress
+```
+
+Step 2: Create hostpath for both MariaDV PersistentVolume and WordPress PersistentVolume with root user and give full permission to /bitnami.
+
+Commands :
+
+```
+sudo mkdir -p /bitnami/mariadb/data && sudo mkdir -p /bitnami/wordpress/wp-content && sudo chmod -R 777 /bitnami
 ```
 
 
@@ -59,7 +52,7 @@ EOF
 ```
 
 
-Execute below command to create mariadb PersistentVolume :
+Command to create mariadb PersistentVolume :
 
 ```
 kubectl create -f  mariadbpv.yaml
@@ -91,24 +84,26 @@ EOF
 ```
 
 
-Execute below command to create wordpress PersistentVolume :
+Command to create wordpress PersistentVolume :
 
 ```
 kubectl create -f  wordpresspv.yaml
 ```
 
 
-Step 5: Create hostpath for both MariaDV PersistentVolume and WordPress PersistentVolume with root user.
 
-Execute below commands :
+Step 5: Add ‘bitnami/wordpress’ to your repo list:
+
+Command:
 
 ```
-sudo mkdir -p /bitnami/mariadb/data
-sudo chown -R 1001:1001 /bitnami/mariadb/data
-sudo mkdir -p /bitnami/wordpress/wp-content
-sudo chown -R 1001:1001 /bitnami/wordpress/wp-content
-sudo mkdir /data 
-sudo chown -R 1001:1001 /data
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
+
+you should see the following output:
+
+```
+"bitnami" has been added to your repositories
 ```
 
 
@@ -116,23 +111,28 @@ Step 6: Setup User account along with Username and Password for WordPress.
 
 As Wordpress is CMS, so we need to have a user account to access it.
 
-Create below yaml file to Setup WordPress User account along with Username and Password:
+Created below yaml file to Setup WordPress User account along with Username and Password:
 
 ```
 cat <<'EOF' > wordpress-values.yaml
 wordpressUsername: jhooq
 wordpressPassword: jhooq
+mariadb.rootUser.password: secretpassword,
+mariadb.db.password: dbpassword,
+allowEmptyPassword: false
 wordpressEmail: contact@jhooq.com
-wordpressBlogName: jhooq.com
+wordpressFirstName: Sammy
+wordpressLastName: Rocks
+wordpressBlogName: Jhooq.com
 service: 
   type: NodePort
 EOF
 ```
 
 
-Now we have completed all the pre-requisites for the installation. Let’s start installing the WordPress helm chart.
+Now we have completed all the pre-requisites for the installation. 
 
-Step 7: Run the following command for WordPress Helm Chart installation:
+Step 7: Command for WordPress Helm Chart installation:
 
 ```
 helm install wordpress bitnami/wordpress --values=wordpress-values.yaml --namespace wordpress 

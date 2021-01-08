@@ -14,4 +14,4 @@ spec:
      namespace: wordpress
      name: data-wordpress-mariadb-0
   hostPath:
-    path: "/bitnami/mariadb"
+    path: "/home/student/bitnami/mariadb"

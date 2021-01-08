@@ -26,7 +26,7 @@
     },
    {
       "description": "Create hostpath for WordPress and MariaDB PVs",
-      "exec": "sudo mkdir -p /bitnami/mariadb/data && sudo chown -R 1001:1001 /bitnami/mariadb/data && sudo mkdir -p /bitnami/wordpress/wp-content && sudo chown -R 1001:1001 /bitnami/wordpress/" 
+      "exec": "mkdir -p /home/student/bitnami/mariadb/data && chown -R 1001:1001 /home/student/bitnami/mariadb/data && mkdir -p /home/student/bitnami/wordpress/wp-content && chown -R 1001:1001 /home/student/bitnami/wordpress/" 
     },
     {
       "description": "Clone and Prepare ",
@@ -40,6 +40,7 @@
       "description": "Install the chart",
       "exec": "helm install wordpress bitnami/wordpress --values=wordpress-values.yaml --namespace wordpress"
     }
+   
   ],
   "display": [
     {

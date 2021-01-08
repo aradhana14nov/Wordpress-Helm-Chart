@@ -38,7 +38,7 @@
     },
     {
       "description": "Install the chart",
-      "exec": "helm install wordpress bitnami/wordpress --values=wordpress-values.yaml --namespace wordpress --version 10.0.3"
+      "exec": "helm install wordpress bitnami/wordpress --set wordpressUsername=admin,wordpressPassword=adminpassword,mariadb.rootUser.password=secretpassword,mariadb.db.password=dbsecretpassword,allowEmptyPassword=false --namespace wordpress --version 10.0.3"
     }
    
   ],

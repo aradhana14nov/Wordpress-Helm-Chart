@@ -2,7 +2,7 @@
 
 ![Logo](_images/logo.png)
 
-WordPress is one of the most versatile open source content management systems on the market. A publishing platform for building blogs and websites.
+WordPress is one of the most versatile open source content management systems on the market. WordPress is built for high performance and is scalable to many servers, has easy integration via REST, JSON, SOAP and other formats, and features a whopping 15,000 plugins to extend and customize the application for just about any type of website.
 
 # Introduction
 WordPress Bitnami Chart bootstraps a deployment on a cluster using the  package manager.

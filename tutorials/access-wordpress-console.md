@@ -25,41 +25,25 @@ To access your WordPress site and Dashboard from outside the cluster follow the 
 ```execute
  export NODE_PORT=$(kubectl get --namespace wordpress -o jsonpath="{.spec.ports[0].nodePort}" services wordpress)
  export NODE_IP=$(kubectl get nodes --namespace wordpress -o jsonpath="{.items[0].status.addresses[0].address}")
- echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
- echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 ```
 
 
-2. Open a browser and access WordPress Site using the obtained URL.
+2. Open a browser and access WordPress Site using the obtained URL by executing below command:
 
 ```execute
 echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
 ```
-
-WordPress Site URL:
-
-```
-WordPress URL: http://$NODE_IP:$NODE_PORT/
-```
-
 You should see your WordPress site with the custom theme that you have included in your image already activated. 
 
 Please see the below snapshot how it looks like :
 
 ![](_images/wordpress-site.PNG)
 
-3. Access WordPress Admin Console:
+3. Access WordPress Admin Console obtained by executing below command:
 
 ```execute
 echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
 ```
-
-Dashboard Console:
-
-```
-echo "WordPress Admin URL: http://$NODE_IP:$NODE_PORT/admin"
-```
-
 Open WordPress Admin Url in browser. You will see following login page :
 
 ![](_images/login-console-final.PNG)

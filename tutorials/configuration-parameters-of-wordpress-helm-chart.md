@@ -1,4 +1,11 @@
-# Configuration Parameters of WordPress Helm Chart
+---
+title: Configuration Parameters of WordPress Helm Chart
+description: This tutorial explains about Configuration Parameters
+---
+
+
+
+### Configuration Parameters of WordPress Helm Chart
 
 
 The WordPress Helm Chart can be customized by specifying configurable Parameters while installing the chart. 
